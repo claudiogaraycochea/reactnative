@@ -1,19 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-export default function App() {
+/* Components */
+import SubscriberOverview from './src/dashboard/subscribers/overview/Overview'
+import NewSubscriber from './src/dashboard/subscribers/newSubscriber/NewSubscriber'
+import Header from './src/components/header/Header'
+import Footer from './src/components/footer/Footer'
+
+console.disableYellowBox = true;
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+      <Header/>
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="SubscriberOverview" component={SubscriberOverview} />
+        <Stack.Screen name="NewSubscriber" component={NewSubscriber} />
+      </Stack.Navigator>
+      <Footer/>
+    </NavigationContainer>      
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
