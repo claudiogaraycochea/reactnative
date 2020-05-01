@@ -17,6 +17,7 @@ const images = {
   INTERNET: require('./icon-internet.png'),
   MOBILE: require('./icon-mobile.png'),
   HOUSE_INSURANCE: require('./icon-house-insurance.png'),
+  SERVICES: require('./icon-services.png'),
 };
 
 const Assets = {

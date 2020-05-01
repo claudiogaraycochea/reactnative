@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, Image } from 'react-native'
+import { TouchableOpacity, Image, TextInput } from 'react-native'
 import styled from 'styled-components/native'
 
 /* Constants */
@@ -134,17 +134,28 @@ export const H3 = styled.Text`
 `;
 
 /* Input */
-export const Input = styled.TextInput`
-  backgroundColor: #FFFFFF;
-  color: #222222;
-  padding: 10px 20px;
-  width: 200px;
-  fontSize: 30px;
-  borderWidth: 2;
-  borderColor: #EBF0F1;
-  border-radius: 5;
-  text-align: right;
-`;
+export const InputFormat = (props) => {
+  const styleInputDecimal = {
+    backgroundColor: '#FFFFFF',
+    color: Theme.color.TEXTCOLOR,
+    padding: 10,
+    width: 200,
+    fontSize: 30,
+    borderWidth: 2,
+    borderColor: '#EBF0F1',
+    borderRadius: 5,
+  }
+
+  return (
+    <TextInput
+      style={styleInputDecimal}
+      textAlign={props.textAlign}
+      keyboardType={props.keyboardType}
+      onChangeText={props.onChangeText}
+      value={props.value}
+    />
+  );
+};
 
 /* Buttons */
 const colors = {
