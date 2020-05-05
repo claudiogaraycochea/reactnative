@@ -21,7 +21,7 @@ export const Container = (props) => {
   return (
     <ContainerView
       style={{
-        backgroundColor: '#ffffff',
+        backgroundColor: '#234FA8',
         color: 'red',
         borderColor: 'blue',
         borderWidth: 0,
@@ -247,7 +247,6 @@ export const ButtonIcon = (props) => {
           justifyContent: 'center',
           width: 48,
           height: 48,
-          backgroundColor: '#ffffff',
         }}
         outline
         onPress= {props.onPress}

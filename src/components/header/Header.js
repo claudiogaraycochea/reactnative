@@ -12,6 +12,7 @@ const HeadWrapper = styled.View`
   justify-content: space-between;
   padding: 10px 10px;
   borderBottomWidth: 1;
+  backgroundColor: #234FA8;
   borderColor: #EBF0F1;
 `
 
