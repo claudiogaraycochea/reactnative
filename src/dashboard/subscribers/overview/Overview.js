@@ -63,14 +63,14 @@ class SubscribersOverview extends Component {
             title='Add Subscription'
           >
             Add Subscriber
-          </ButtonSimple>    
+          </ButtonSimple>
         </ItemWrapper>
       </Container>
     )
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state ) => {
   return {
     subscribers: state.subscriberReducer.subscriberList
   }
