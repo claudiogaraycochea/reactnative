@@ -8,6 +8,7 @@ import configureStore from './src/store/store'
 const store = configureStore();
 
 /* Components */
+import Home from './src/dashboard/home/Home'
 import SubscriberOverview from './src/dashboard/subscribers/overview/Overview'
 import UpdateSubscriber from './src/dashboard/subscribers/updateSubscriber/UpdateSubscriber'
 import AddSubscriber from './src/dashboard/subscribers/addSubscriber/AddSubscriber'
@@ -26,6 +27,7 @@ function App() {
       <NavigationContainer>
         <Header/>
         <Stack.Navigator headerMode="none">
+          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="SubscriberOverview" component={SubscriberOverview} />
           <Stack.Screen name="UpdateSubscriber" component={UpdateSubscriber} />
           <Stack.Screen name="AddSubscriber" component={AddSubscriber} />

@@ -21,10 +21,7 @@ export const Container = (props) => {
   return (
     <ContainerView
       style={{
-        backgroundColor: '#234FA8',
-        color: 'red',
-        borderColor: 'blue',
-        borderWidth: 0,
+        backgroundColor: '#FFFFFF',
       }}
       >
       <ContainerScroll
@@ -49,6 +46,18 @@ const ContainerView = styled.View`
   width: 100%;
   color: red;
 `;
+
+export const ContainerFix = (props) => {
+  return (
+    <ContainerView
+      style={{
+        backgroundColor: '#FFFFFF',
+      }}
+      >
+        {props.children}
+    </ContainerView>
+  );
+}
 
 export const Row = styled.View`
   margin-left: 20;
