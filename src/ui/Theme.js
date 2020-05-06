@@ -8,6 +8,8 @@ export const Theme = {
     PRIMARY: '#00D774',
     SECONDARY: '#30485F',
     TEXTCOLOR: '#30485F',
+    GREEN: '#00C49F',
+    BLUE: '#3570ED',
   },
   fontSize: {
     SMALL: '16',
@@ -21,10 +23,7 @@ export const Container = (props) => {
   return (
     <ContainerView
       style={{
-        backgroundColor: '#ffffff',
-        color: 'red',
-        borderColor: 'blue',
-        borderWidth: 0,
+        backgroundColor: '#FFFFFF',
       }}
       >
       <ContainerScroll
@@ -49,6 +48,18 @@ const ContainerView = styled.View`
   width: 100%;
   color: red;
 `;
+
+export const ContainerFix = (props) => {
+  return (
+    <ContainerView
+      style={{
+        backgroundColor: '#FFFFFF',
+      }}
+      >
+        {props.children}
+    </ContainerView>
+  );
+}
 
 export const Row = styled.View`
   margin-left: 20;
@@ -81,7 +92,7 @@ export const ItemWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 5px 20px;
   borderBottomWidth: 1;
   borderColor: #EBF0F1;
 `;
@@ -117,14 +128,14 @@ export const Text = styled.Text`
 export const H1 = styled.Text`
   fontSize: 40px;
   font-weight: bold;
-  color: ${Theme.color.TEXTCOLOR};
+  color: ${props => props.color ? props.color : Theme.color.TEXTCOLOR};
 `;
 
 export const H2 = styled.Text`
   fontSize: ${props => props.fontSize ? props.fontSize : '30'};
   padding-bottom: 5;
   font-weight: bold;
-  color: ${Theme.color.TEXTCOLOR};
+  color: ${props => props.color ? props.color : Theme.color.TEXTCOLOR};
 `;
 
 export const H3 = styled.Text`
@@ -247,7 +258,6 @@ export const ButtonIcon = (props) => {
           justifyContent: 'center',
           width: 48,
           height: 48,
-          backgroundColor: '#ffffff',
         }}
         outline
         onPress= {props.onPress}
