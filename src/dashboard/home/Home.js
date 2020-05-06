@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import HeroMonths from '../../components/heroMonths/HeroMonths'
 import CommingUp from '../../components/commingUp/CommingUp'
 import DetailMonth from '../../components/detailMonth/DetailMonth'
-// import Overview from '../subscribers/overview/Overview'
 
 class Home extends Component {
   constructor(){
