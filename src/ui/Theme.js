@@ -92,7 +92,7 @@ export const ItemWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 5px 20px;
   borderBottomWidth: 1;
   borderColor: #EBF0F1;
 `;

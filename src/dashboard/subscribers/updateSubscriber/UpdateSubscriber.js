@@ -40,7 +40,7 @@ class UpdateSubscriber extends Component {
   updateSubscriber = () => {
     const { id, amount } = this.state;
     this.props.update(id, amount);
-    this.props.navigation.navigate('SubscriberOverview', { refresh:  Math.random() })
+    this.props.navigation.navigate('Home', { refresh:  Math.random() })
   }
 
   render() {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Image, Text, ScrollView } from 'react-native'
-import {
-  ItemWrapper,
-  Col,
-} from './../../ui/Theme'
-import { connect } from 'react-redux';
+import { ItemWrapper, Col, ButtonIcon, ButtonSimple } from './../../ui/Theme'
+import { connect } from 'react-redux'
 import styled from 'styled-components/native'
+import Assets from './../../assets/'
+
+/* Styles & Wrappers */
 
 const DetailMonthWrapper = styled.View`
   display: flex;
@@ -44,11 +44,11 @@ class DetailMonth extends Component {
   }
 
   updateSubscriber = (id) => {
-    this.props.navigation.navigate('UpdateSubscriber', { id })
+    this.props.props.navigation.navigate('UpdateSubscriber', { id })
   }
 
   addSubscriber = () => {
-    this.props.navigation.navigate('AddSubscriber')
+    this.props.props.navigation.navigate('AddSubscriber')
   }
 
   render() {
@@ -68,15 +68,30 @@ class DetailMonth extends Component {
                     source={subscriber.iconStatus}
                   />
                 </Col>
-                <Col col={65}>
+                <Col col={45}>
                   <Text style={styles.name}>{subscriber.name}</Text>
                 </Col>
                 <Col col={20} justify={'flex-end'}>
                   <Text style={styles.amount}>€{subscriber.amount}</Text>
                 </Col>
+                <Col col={20} justify={'flex-end'}>
+                  <ButtonIcon
+                    icon={Assets.images.NEXT}
+                    onPress={()=>this.updateSubscriber(subscriber.id)}
+                  />
+                </Col>
               </ItemWrapper>
             )
           })}
+          <ItemWrapper style={{justifyContent: 'center'}}>
+            <ButtonSimple
+              icon={Assets.images.NEXT}
+              onPress={()=>this.addSubscriber()}
+              title='Add Subscription'
+            >
+              Add Subscriber
+            </ButtonSimple>
+          </ItemWrapper>
         </ScrollView>
       </DetailMonthWrapper>
     )
@@ -89,4 +104,10 @@ const mapStateToProps = (state ) => {
   }
 }
 
-export default connect(mapStateToProps, null)(DetailMonth);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    delete: (id) => dispatch(deleteSubscribers(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailMonth);

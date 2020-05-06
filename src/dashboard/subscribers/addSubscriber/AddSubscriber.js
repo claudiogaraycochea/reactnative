@@ -40,7 +40,7 @@ class AddSubscriber extends Component {
       icon,
     };
     this.props.add(newSubscriber);
-    this.props.navigation.navigate('SubscriberOverview', { refresh:  Math.random() })
+    this.props.navigation.navigate('Home', { refresh:  Math.random() })
   }
 
   render() {

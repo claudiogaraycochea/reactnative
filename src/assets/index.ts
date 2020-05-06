@@ -4,6 +4,7 @@ const images = {
   MENU: require('./icon-menu.png'),
   USER: require('./icon-user.png'),
   PLUS: require('./icon-plus.png'),
+  NEXT: require('./icon-next.png'),
   HOME: require('./icon-home.png'),
   CALENDAR: require('./icon-calendar.png'),
   DISCOUNT: require('./icon-discount.png'),

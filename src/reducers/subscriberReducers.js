@@ -62,7 +62,8 @@ const subscriberReducer = (state = initialState, action) => {
         id: Math.random(),
         name: action.newSubscriber.name,
         amount: action.newSubscriber.amount,
-        icon: action.newSubscriber.icon, 
+        icon: action.newSubscriber.icon,
+        iconStatus: Assets.images.DIAMOND_SUCCESS,
       };
       return {
         ...state,
