@@ -8,7 +8,7 @@ export const FooterWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 10px 20px;
   borderTopWidth: 1;
   borderColor: #EBF0F1;
 `
