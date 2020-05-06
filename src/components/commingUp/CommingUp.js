@@ -22,7 +22,7 @@ const CommingUpBox = styled.View`
   padding: 10px 20px;
   backgroundColor: #FFFFFF;
   borderWidth: 0;
-  width: 180;
+  width: 160;
   height: 60;
   borderRadius: 10;
   marginLeft: 20;

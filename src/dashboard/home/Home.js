@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import { Text, View, Dimensions } from 'react-native'
-import { ContainerFix, Row } from './../../ui/Theme'
+import { View, Dimensions } from 'react-native'
+import { ContainerFix } from './../../ui/Theme'
 import { connect } from 'react-redux'
-import ScrollMonths from '../../components/scrollMonths/ScrollMonths'
+
+/* Components */
+import HeroMonths from '../../components/heroMonths/HeroMonths'
 import CommingUp from '../../components/commingUp/CommingUp'
 import DetailMonth from '../../components/detailMonth/DetailMonth'
 
 class Home extends Component {
-
   constructor(){
     super();
     this.state = {
@@ -23,30 +24,24 @@ class Home extends Component {
   }
 
   render() {
-    let dimensions = Dimensions.get("window");
+    let dimensions = Dimensions.get('window');
     let imageHeight = (dimensions.height-158)/2;
-    let imageWidth = dimensions.width-40;
+
     return (
       <ContainerFix>
         <View 
           style={{
             backgroundColor: '#234FA8',
             height: (imageHeight)+42,
-            borderColor: 'blue',
-            borderWidth: 0,
-            display: 'fix',
           }}
         >
-            <ScrollMonths />
-          
-            <CommingUp />
+          <HeroMonths />
+          <CommingUp />
         </View>
         <View
           style={{
-            borderColor: 'blue',
-            borderWidth: 0,
             height: imageHeight,
-            position: "relative",
+            position: 'relative',
             top: -40,
           }}
         >
@@ -63,10 +58,4 @@ const mapStateToProps = (state ) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    delete: (id) => dispatch(deleteSubscribers(id))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, null)(Home);

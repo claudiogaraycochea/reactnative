@@ -8,6 +8,8 @@ export const Theme = {
     PRIMARY: '#00D774',
     SECONDARY: '#30485F',
     TEXTCOLOR: '#30485F',
+    GREEN: '#00D774',
+    BLUE: '#3570ED',
   },
   fontSize: {
     SMALL: '16',
@@ -126,14 +128,14 @@ export const Text = styled.Text`
 export const H1 = styled.Text`
   fontSize: 40px;
   font-weight: bold;
-  color: ${Theme.color.TEXTCOLOR};
+  color: ${props => props.color ? props.color : Theme.color.TEXTCOLOR};
 `;
 
 export const H2 = styled.Text`
   fontSize: ${props => props.fontSize ? props.fontSize : '30'};
   padding-bottom: 5;
   font-weight: bold;
-  color: ${Theme.color.TEXTCOLOR};
+  color: ${props => props.color ? props.color : Theme.color.TEXTCOLOR};
 `;
 
 export const H3 = styled.Text`
