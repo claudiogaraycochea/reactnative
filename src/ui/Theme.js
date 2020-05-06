@@ -8,7 +8,7 @@ export const Theme = {
     PRIMARY: '#00D774',
     SECONDARY: '#30485F',
     TEXTCOLOR: '#30485F',
-    GREEN: '#00D774',
+    GREEN: '#00C49F',
     BLUE: '#3570ED',
   },
   fontSize: {

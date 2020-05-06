@@ -4,6 +4,8 @@ import { Theme } from './../../ui/Theme'
 import Assets from './../../assets/'
 import styled from 'styled-components/native'
 
+/* Mock */
+
 const monthsSubscriptions = [
   {
     id: '1',
@@ -20,6 +22,8 @@ const monthsSubscriptions = [
     color: Theme.color.GREEN,
   }
 ]
+
+/* Styles & Wrappers */
 
 const HeroWrapper = styled.View`
   display: flex;
